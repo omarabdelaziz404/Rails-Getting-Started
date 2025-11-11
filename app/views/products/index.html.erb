@@ -1,0 +1,19 @@
+<%# View %>
+<h1>Products</h1>
+
+<%= link_to "New product", new_product_path if authenticated? %>
+<%= link_to "Login", new_session_path unless authenticated? %>
+
+<%#
+link_to → a Rails helper method used to create HTML links
+"New product" → The clickable text users see.
+new_product_path → A path helper that Rails generates automatically
+%>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <div>
+      <%= link_to product.name, product_path(product.id) %>
+    </div>
+  <% end %>
+</div>
