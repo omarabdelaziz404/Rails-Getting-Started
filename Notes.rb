@@ -86,3 +86,9 @@
     # app/views/products/index.html.erb
     <%= link_to "New product", new_product_path if authenticated? %>
     <%= link_to "Login", new_session_path unless authenticated? %>
+
+13. Rich Text Fields with Action Text:
+    $ bin/rails action_text:install
+    $ bundle install
+    $ bin/rails db:migrate
+
