@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
   def show # Showing Individual Products
   end
   
-  def new
-    @product = Product.new # instantiates a new Product
+  def new # instantiates a new Product
+    @product = Product.new 
   end
 
   def create # builds a new product with form data.
@@ -47,8 +47,10 @@ class ProductsController < ApplicationController
     end
 
   def product_params
-      params.expect(product: [ :name, :description, :featured_image ])
+      params.expect(product: [ :name, :description, :featured_image, :inventory_count ])
   end
-
+  # params >> All parameters from the request
+  # .expect(:product) >> Make sure there’s a key called product in the incoming parameters
+  # [fields] >> Whitelists only these fields so they can be used to create/update a product.
 end
 

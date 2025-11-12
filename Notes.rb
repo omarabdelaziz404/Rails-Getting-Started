@@ -92,3 +92,18 @@
     $ bundle install
     $ bin/rails db:migrate
 
+16.1. Basic Inventory Tracking:
+    $ bin/rails generate migration AddInventoryCountToProducts inventory_count:integer
+    # db/migrate/<timestamp>_add_inventory_count_to_products.rb
+    add_column :products, :inventory_count, :integer, default: 0
+    $ bin/rails db:migrate
+
+16.2. Adding Subscribers to Products
+    $ bin/rails generate model Subscriber product:belongs_to email
+    # product:belongs_to >> subscribers and products have a one-to-many relationship
+    $ bin/rails db:migrate
+
+16.3. In Stock Email Notifications:
+    $ bin/rails g mailer Product in_stock # generates ProductMailer class + two email templates in our views folder(HTML - TEXT)
+
+
