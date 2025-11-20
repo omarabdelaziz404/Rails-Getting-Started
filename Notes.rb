@@ -192,6 +192,11 @@
 19. Consistently Formatted Code with RuboCop:
     $ bin/rubocop
     $ bin/rubocop -a
-    
+
 20. Security
     $ bin/brakeman
+
+22. Deploying to Production:
+    $ bin/kamal setup
+    $ bin/kamal deploy
+    $ bin/kamal console
