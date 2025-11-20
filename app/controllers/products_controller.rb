@@ -3,17 +3,17 @@ class ProductsController < ApplicationController
   allow_unauthenticated_access only: %i[ index show ]
   before_action :set_product, only: %i[ show edit update destroy ]
 
-  def index 
-  # index method is an Action. 
-  # index action will render app/views/products/index.html.erb
+  def index
+    # index method is an Action.
+    # index action will render app/views/products/index.html.erb
     @products = Product.all # fetch all rows from the products table, and assign it to an instance variable @
   end
 
   def show # Showing Individual Products
   end
-  
+
   def new # instantiates a new Product
-    @product = Product.new 
+    @product = Product.new
   end
 
   def create # builds a new product with form data.
@@ -53,4 +53,3 @@ class ProductsController < ApplicationController
   # .expect(:product) >> Make sure there’s a key called product in the incoming parameters
   # [fields] >> Whitelists only these fields so they can be used to create/update a product.
 end
-

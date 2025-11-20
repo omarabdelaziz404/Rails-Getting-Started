@@ -185,3 +185,13 @@
         $ bundle remove sprockets
         $ bundle remove sprockets-rails
         $ bundle remove sass-rails
+
+18. Testing:
+    $ bin/rails test
+
+19. Consistently Formatted Code with RuboCop:
+    $ bin/rubocop
+    $ bin/rubocop -a
+    
+20. Security
+    $ bin/brakeman
